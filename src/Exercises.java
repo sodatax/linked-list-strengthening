@@ -41,7 +41,13 @@ public class Exercises {
      * @return the new head of the linked list
      */
     public static ListNode prepend(ListNode head, int toAdd) {
-        return null;
+        ListNode current = head;
+
+        while(current!=null){
+            
+        }
+
+        return head;
     }
 
     /**
@@ -57,7 +63,21 @@ public class Exercises {
      * @return the head of the list with the last element removed
      */
     public static ListNode removeLast(ListNode head) {
-        return null;
+        ListNode current = head;
+
+        if(head==null || head.next==null){
+            return null;
+        }
+
+        while(current!=null){
+            if(current.next.next==null){
+                current.next = null;
+                return head;
+            }
+            current = current.next;
+        }
+
+        return head;
     }
 
     /**

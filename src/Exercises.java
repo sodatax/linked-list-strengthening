@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Exercises {
     /**
      * Returns a count of how many nodes are in the linked list.
@@ -170,7 +172,36 @@ public class Exercises {
      * @return whether the values in bigList are twice the values in smallList
      */
     public static boolean isDoubled(ListNode smallList, ListNode bigList) {
-        return false;
+        if(smallList == null && bigList == null){
+            return true;
+        }
+
+        ListNode current = smallList;
+        ArrayList<Integer> small = new ArrayList<>();
+        ArrayList<Integer> big = new ArrayList<>();
+        boolean result = false;
+
+        if(length(smallList) == length(bigList)){
+            while(current != null){
+                small.add(current.data);
+                current = current.next;
+            }
+            current = bigList;
+            while(current != null){
+                big.add(current.data);
+                current = current.next;
+            }
+        }
+
+        for(int i = 0; i< small.size(); i++){
+            if(small.get(i) == big.get(i)/2){
+                result = true;
+            }else{
+                return false;
+            }
+        }
+        
+        return result;
     }
 
     /**

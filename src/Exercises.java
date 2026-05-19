@@ -43,13 +43,10 @@ public class Exercises {
      * @return the new head of the linked list
      */
     public static ListNode prepend(ListNode head, int toAdd) {
-        ListNode current = head;
+        ListNode newHead = new ListNode(toAdd);
+        newHead.next = head;
 
-        while(current!=null){
-            
-        }
-
-        return head;
+        return newHead;
     }
 
     /**
@@ -219,6 +216,7 @@ public class Exercises {
      * @return the head of the new list after k rotations to the left
      */
     public static ListNode rotateLeft(ListNode head, int k) {
+
         return null;
     }
 }
